@@ -1,18 +1,13 @@
-:root {
-  --bg: #dfe7dc;
-  --text: #101410;
-  --accent: #4caf50;
-  --card: #1b1f1b;
-}
+
 
 body {
-  background-color: var(--bg);
-  color: var(--text);
-  font-family: 'Helvetica Neue', sans-serif;
+  background: linear-gradient(to right,rgb(88, 88, 151),white);;
+  color: black;
+  font-family: italic,'Helvetica Neue', sans-serif;
 }
 
 .post-item {
-  background-color: var(--card);
+  background-color: lightgray;
   border-left: 4px solid var(--accent);
   padding: 10px;
   border-bottom: 10px;
@@ -21,10 +16,10 @@ body {
 
 
 #post-detail {
-  background-color: whitesmoke;
+  background-color: white;
   border: 1px solid var(--accent);
   padding: 15px;
-  margin-left: 25%;
+  margin-left: 40%;
   
 }
 
@@ -41,11 +36,11 @@ body {
 
 .left-container {
   width: 30%;
-  background-color: var(--card); /* or any color you prefer */
+  background-color:white;
   border: 1px solid var(--accent);
   padding: 20px;
   margin-right: 20px;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  float: left; /* positions it on the left */
+  float: left; 
 }
