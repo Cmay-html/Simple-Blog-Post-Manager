@@ -6,18 +6,21 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1 id="first-head">HOTTEST SPORTS CARS 2025!</h1>
-  <h3 id="second head">Innovation meets efficiency</h3>
-  <div id="post-list"></div>
-  <div id="post-detail"></div>
-
-  <form id="new-post-form">
+   <h1 id="first-head">HOTTEST SPORTS CARS 2025!</h1>
+   <h3 id="second-head">Innovation meets efficiency</h3>
+   <h3 id="third-head">BLOG POSTS</h3>
+   <div class="layout-container">
+     <div id="post-list"></div>
+     <div id="post-detail"></div>
+   </div>
+ <div class="left-container">
+   <form id="new-post-form">
     <h3>Add New Post</h3>
     <input type="text" name="title" placeholder="Post title" required />
     <textarea name="content" placeholder="Post content" required></textarea>
     <input type="text" name="author" placeholder="Author name" required />
     <button type="submit">Add Post</button>
-  </form><br>
+   </form><br>
 
   <form id="edit-post-form" class="hidden">
     <h4>Update Post Details</h4>
@@ -28,7 +31,7 @@
     <button type="submit">Update Post</button>
     <button type="button" id="cancel-edit">Cancel</button>
   </form>
-
-  <script src="index.js" defer></script>
+ </div>
+<script src="index.js" defer></script> 
 </body>
 </html>

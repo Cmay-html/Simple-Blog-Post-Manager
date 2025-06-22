@@ -32,6 +32,7 @@ function handlePostClick(post) {
   const detail = document.getElementById("post-detail");
   detail.innerHTML = `
     <h2>${post.title}</h2>
+     <img src="${post.image}" alt="${post.title}" style = "max-width: 80%;height: auto; margin: 10px 0;">
     <p>${post.content}</p>
     <p><em>by ${post.author}</em></p>
     <button id="edit-btn">Edit</button>

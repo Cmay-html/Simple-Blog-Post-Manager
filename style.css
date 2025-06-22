@@ -1,8 +1,8 @@
 :root {
-  --bg: #0f1c2e;
-  --text: #e0e6ed;
-  --accent: #1ca3ec;
-  --card: #1f2d3d;
+  --bg: #dfe7dc;
+  --text: #101410;
+  --accent: #4caf50;
+  --card: #1b1f1b;
 }
 
 body {
@@ -15,18 +15,17 @@ body {
   background-color: var(--card);
   border-left: 4px solid var(--accent);
   padding: 10px;
-  margin-bottom: 10px;
+  border-bottom: 10px;
+  width: 35%;
 }
 
-.post-item:hover {
-  background-color: #2a3b4d;
-}
 
 #post-detail {
-  background-color: var(--card);
+  background-color: whitesmoke;
   border: 1px solid var(--accent);
   padding: 15px;
-  margin-right: 60%;
+  margin-left: 25%;
+  
 }
 
 #first-head{
@@ -35,6 +34,18 @@ body {
 
 }
 
+#second-head{
+  text-align: center;
+  font-family: Times, serif;
+}
 
-
+.left-container {
+  width: 30%;
+  background-color: var(--card); /* or any color you prefer */
+  border: 1px solid var(--accent);
+  padding: 20px;
+  margin-right: 20px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  float: left; /* positions it on the left */
 }
