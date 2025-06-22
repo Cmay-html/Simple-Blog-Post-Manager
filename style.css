@@ -1,0 +1,29 @@
+
+#post-list {
+  margin-bottom: 20px;
+}
+
+.post-item {
+  cursor: pointer;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+.post-item img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  object-fit: cover;
+}
+
+.post-item:hover {
+  background-color: #f0f0f0;
+}
+
+#post-detail {
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 20px;
+}
