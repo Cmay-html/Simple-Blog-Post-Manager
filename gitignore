@@ -1,0 +1,28 @@
+# Node dependencies
+node_modules/
+
+# Local dev tools (e.g. live-server or vite)
+dist/
+build/
+.vite/
+.cache/
+.temp/
+
+# Logs and diagnostics
+*.log
+npm-debug.log*
+
+# System and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Environment variables
+.env
+
+# Coverage reports
+coverage/
+
+# Optional: ignore local images if not version-controlled
+images/
