@@ -1,0 +1,34 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "2025 Porsche 718 Cayman",
+      "content": "The Porsche 718 Cayman offers a perfect mix of power and agility with turbocharged flat-four and flat-six engines. With up to 400 hp, it’s a nimble and fun sports car that’s easy to drive hard on twisty roads or the track.",
+      "author": "Seth Rollens"
+    },
+     {
+      "id": "2",
+      "title": "2025 Porsche 911",
+      "content": "The Porsche 911 packs up to 473 hp from its twin-turbo flat-six engine. It offers super-fast shifts with its 8-speed PDK transmission and even has hybrid models that add extra power. This car is all about blending classic sports car vibes with modern tech and blistering performance.",
+      "author": "Rich Ceppos"
+    },
+     {
+      "id": "3",
+      "title": "2025 Toyota GR Supra",
+      "content": "The 2025 Toyota GR Supra comes with a lively 382 hp turbocharged inline-six. You can choose between a manual or automatic transmission, making it fun whether you like to row your own gears or prefer a smooth automatic. It’s quick, responsive, and great for drivers who love a sporty feel.",
+      "author": "Linet Lantei"
+    },
+     {
+      "id": "4",
+      "title": "2025 BMW M2",
+      "content": "BMW’s M2 is a driver’s favorite, boasting 473 hp from a twin-turbo inline-six. It’s rear-wheel drive and comes with either a manual or automatic gearbox, giving you plenty of options to enjoy sharp handling and powerful acceleration on the road or track.",
+      "author": "Reagan Kosen"
+    },
+     {
+      "id": "5",
+      "title": "2025 Chevrolet Corvette ZR1",
+      "content": "The Corvette ZR1 is a true beast, featuring a mid-engine twin-turbo V8 that cranks out over 1000 hp. It’s designed for extreme speed and track performance, with aggressive aerodynamics and a chassis built to handle serious power.",
+      "author": "Lankan K"
+    }
+      ]
+}
