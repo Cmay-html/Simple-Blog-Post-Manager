@@ -33,6 +33,7 @@ button:hover {
   border: 1px solid var(--accent);
   padding: 15px;
   margin-left: 40%;
+  flex: 2;
 }
 
 #first-head {
@@ -53,14 +54,17 @@ button:hover {
   margin-right: 20px;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  float: left;
   margin-bottom: 10%;
+  flex: 1;
 }
 
 .body-container {
   background-color: whitesmoke;
   border: 1px solid var(--accent);
   padding: 160px;
+  flex-direction: column;
+  display: flex;
+  
 
 }
 
@@ -79,7 +83,5 @@ button:hover {
     float: none;
   }
 
-  .body-container {
-    flex-direction: column;
-  }
+ 
 }
