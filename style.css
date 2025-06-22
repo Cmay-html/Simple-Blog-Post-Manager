@@ -71,3 +71,15 @@ button:hover {
   color: white;
   border-radius: 4px;
 }
+
+@media (max-width: 768px) {
+  .left-container,
+  #post-detail {
+    width: 100%;
+    float: none;
+  }
+
+  .body-container {
+    flex-direction: column;
+  }
+}
