@@ -1,22 +1,76 @@
-
-
 body {
-  background: linear-gradient(to bottom,skyblue,white);
+  background: linear-gradient(to bottom, skyblue, white);
   color: black;
   font-style: italic;
-  font-family:'Helvetica Neue', sans-serif;
+  font-family: 'Helvetica Neue', sans-serif;
+  margin: 0;
+  padding: 0;
 }
+
+
+#first-head, #second-head {
+  text-align: center;
+  font-family: Times, serif;
+  margin-top: 20px;
+}
+
+
+.body-container {
+  background-color: whitesmoke;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 24px;
+  margin: 24px auto;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+
+.left-container {
+  width: 100%;
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+
+
 .post-item {
-  display: inline-block;
   background-color: lightgray;
   border-left: 4px solid whitesmoke;
   padding: 10px;
-  border-bottom: 10px;
-  width: 35%;
+  margin: 12px 0;
+  width: 100%;
+  box-sizing: border-box;
+  display: block;
 }
+
+
+#post-detail {
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  padding: 15px;
+  margin: 0 0 20px 0;
+  border-radius: 8px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
 
 button {
   transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-style: normal;
+  font-family: inherit;
 }
 
 button:hover {
@@ -28,46 +82,6 @@ button:hover {
 }
 
 
-#post-detail {
-  background-color: white;
-  border: 1px solid var(--accent);
-  padding: 15px;
-  margin-left: 40%;
-  flex: 2;
-}
-
-#first-head {
-  text-align: center;
-  font-family: Times, serif;
-}
-
-#second-head {
-  text-align: center;
-  font-family: Times, serif;
-}
-
-.left-container {
-  width: 30%;
-  background-color: white;
-  border: 1px solid var(--accent);
-  padding: 20px;
-  margin-right: 20px;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  margin-bottom: 10%;
-  flex: 1;
-}
-
-.body-container {
-  background-color: whitesmoke;
-  border: 1px solid var(--accent);
-  padding: 160px;
-  flex-direction: column;
-  display: flex;
-  
-
-}
-
 .badge {
   display: inline-block;
   padding: 5px 10px;
@@ -76,12 +90,31 @@ button:hover {
   border-radius: 4px;
 }
 
-@media (max-width: 768px) {
-  .left-container,
-  #post-detail {
-    width: 100%;
-    float: none;
-  }
 
- 
+input[type="text"], textarea {
+  width: 100%;
+  padding: 8px;
+  margin: 6px 0 12px 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 1em;
+}
+
+
+@media (max-width: 768px) {
+  .body-container, .left-container, #post-detail, .post-item {
+    max-width: 100%;
+    width: 100%;
+    margin: 0 0 16px 0;
+    padding: 10px;
+  }
+  #first-head, #second-head {
+    font-size: 1.2em;
+    margin-top: 10px;
+  }
+  body {
+    font-size: 1em;
+  }
 }
