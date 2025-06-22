@@ -23,21 +23,29 @@ body {
   margin: 24px auto;
   max-width: 600px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   box-sizing: border-box;
 }
 
 
 .left-container {
-  width: 100%;
+  flex: 0 0 40%;         
   background-color: white;
   border: 1px solid #e0e0e0;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  margin-bottom: 20px;
   box-sizing: border-box;
 }
+
+#post-detail {
+  flex: 1;                
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  padding: 20px;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
 
 
 .post-item {
@@ -50,16 +58,6 @@ body {
   display: block;
 }
 
-
-#post-detail {
-  background-color: white;
-  border: 1px solid #e0e0e0;
-  padding: 15px;
-  margin: 0 0 20px 0;
-  border-radius: 8px;
-  box-sizing: border-box;
-  width: 100%;
-}
 
 
 button {
