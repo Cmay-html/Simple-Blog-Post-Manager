@@ -31,8 +31,9 @@ The Simple Blog Post Manager is a lightweight, beginner-friendly web application
 - A modern web browser  
 
 ### View Live Site  
-Visit the deployed application at:  https://cmay-html.github.io/Simple-Blog-Post-Manager
-
+Visit the deployed application at:  
+ https://cmay-html.github.io/Simple-Blog-Post-Manager/
+ 
 The site allows you to:
  - View posts on the left, click to reveal details on the right.
 - Use the form to add new posts (title, content, author).
