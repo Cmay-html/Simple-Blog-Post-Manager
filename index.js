@@ -16,24 +16,29 @@ function displayPosts() {
       list.innerHTML = "";
       posts.forEach(post => {
         const div = document.createElement("div");
+       
+        div.className = "post-item"; 
+
         div.textContent = post.title;
         div.addEventListener("click", () => handlePostClick(post));
         list.appendChild(div);
       });
 
+      
       if (posts.length > 0) {
-        handlePostClick(posts[0]); 
+        handlePostClick(posts[0]);
       }
     });
 }
+
 
 function handlePostClick(post) {
   currentPostId = post.id;
   const detail = document.getElementById("post-detail");
   detail.innerHTML = `
     <h2>${post.title}</h2>
-    <img src="${post.image}" alt="${post.title}" style = "max-width: 100%;height: auto; margin: 10px 0;">
-    <p>${post.content}</p>
+    <img src="${post.image}" alt="${post.title}" class="post-thumb";">
+    <p>${post.content} </p>
     <p><em>by ${post.author}</em></p>
     <button id="edit-btn">Edit</button>
     <button id="delete-btn">Delete</button>
