@@ -32,7 +32,7 @@ The Simple Blog Post Manager is a lightweight, beginner-friendly web application
 
 ### View Live Site  
 Visit the deployed application at:  
- https://cmay-html.github.io/Simple-Blog-Post-Manager/
+ https://simple-blog-post-manager-1.onrender.com
  
 The site allows you to:
  - View posts on the left, click to reveal details on the right.
@@ -64,7 +64,8 @@ Run the backend server using db.json:
 
 # Now open your browser to:
 Frontend: http://127.0.0.1:5500/index.html
-Backend:  http://localhost:3000/posts
+Backend:  Local Backend: http://localhost:3000 
+
 
 
 ---

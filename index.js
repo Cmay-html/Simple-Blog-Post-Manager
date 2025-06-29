@@ -1,114 +1,120 @@
+const BASE_URL = "https://simple-blog-post-manager-1.onrender.com/posts";
 
-const BASE_URL =  "https://simple-blog-post-manager-1.onrender.com";
-let currentPostId = null;
+// DOM Elements
+const postList = document.getElementById("post-list");
+const postDetail = document.getElementById("post-detail");
+const newPostForm = document.getElementById("new-post-form");
+const editPostForm = document.getElementById("edit-post-form");
+const cancelEditBtn = document.getElementById("cancel-edit");
 
-function main() {
-  displayPosts();
-  addNewPostListener();
-  addEditPostListener();
+// Load posts on page load
+fetch(BASE_URL)
+  .then(res => res.json())
+  .then(posts => posts.forEach(renderPostTitle));
+
+// Render post titles in list
+function renderPostTitle(post) {
+  const div = document.createElement("div");
+  div.textContent = post.title;
+  div.classList.add("post-title");
+  div.style.cursor = "pointer";
+
+  div.addEventListener("click", () => showPostDetail(post));
+  postList.appendChild(div);
 }
 
-function displayPosts() {
-  fetch(BASE_URL)
-    .then(res => res.json())
-    .then(posts => {
-      const list = document.getElementById("post-list");
-      list.innerHTML = "";
-      posts.forEach(post => {
-        const div = document.createElement("div");
-       
-        div.className = "post-item"; 
-
-        div.textContent = post.title;
-        div.addEventListener("click", () => handlePostClick(post));
-        list.appendChild(div);
-      });
-
-      
-      if (posts.length > 0) {
-        handlePostClick(posts[0]);
-      }
-    });
-}
-
-
-function handlePostClick(post) {
-  currentPostId = post.id;
-  const detail = document.getElementById("post-detail");
-  detail.innerHTML = `
+// Show post detail
+function showPostDetail(post) {
+  postDetail.innerHTML = `
     <h2>${post.title}</h2>
-    <img src="${post.image}" alt="${post.title}" class="post-thumb";">
-    <p>${post.content} </p>
-    <p><em>by ${post.author}</em></p>
+    <p>${post.content}</p>
+    <p><strong>Author:</strong> ${post.author}</p>
+    ${post.image ? `<img src="${post.image}" alt="${post.title}" width="300">` : ""}
+    <br><br>
     <button id="edit-btn">Edit</button>
     <button id="delete-btn">Delete</button>
   `;
 
-  document.getElementById("edit-btn").addEventListener("click", () => {
-    const editForm = document.getElementById("edit-post-form");
-    document.getElementById("edit-title").value = post.title;
-    document.getElementById("edit-content").value = post.content;
-    editForm.classList.remove("hidden");
-  });
-
-  document.getElementById("delete-btn").addEventListener("click", () => {
-    fetch(`${BASE_URL}/${post.id}`, { method: "DELETE" })
-      .then(() => {
-        displayPosts();
-        document.getElementById("post-detail").innerHTML = "<p>Select a post to view details</p>";
-      });
-  });
+  // Attach event listeners
+  document.getElementById("edit-btn").onclick = () => fillEditForm(post);
+  document.getElementById("delete-btn").onclick = () => deletePost(post.id);
 }
 
-function addNewPostListener() {
-  const form = document.getElementById("new-post-form");
-  form.addEventListener("submit", e => {
-    e.preventDefault();
-    const newPost = {
-      title: form.title.value,
-      content: form.content.value,
-      author: form.author.value
-    };
+// Add New Post
+newPostForm.addEventListener("submit", e => {
+  e.preventDefault();
 
-    fetch(BASE_URL, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(newPost)
-    })
+  const newPost = {
+    title: newPostForm.title.value,
+    content: newPostForm.content.value,
+    author: newPostForm.author.value,
+    image: newPostForm.image.value
+  };
+
+  fetch(BASE_URL, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(newPost)
+  })
+    .then(res => res.json())
+    .then(post => {
+      renderPostTitle(post);
+      newPostForm.reset();
+    });
+});
+
+// Fill Edit Form
+function fillEditForm(post) {
+  editPostForm.classList.remove("hidden");
+  editPostForm["edit-id"].value = post.id;
+  editPostForm["edit-title"].value = post.title;
+  editPostForm["edit-content"].value = post.content;
+  editPostForm["edit-author"].value = post.author;
+  editPostForm["edit-image"].value = post.image || "";
+}
+
+// Update Post
+editPostForm.addEventListener("submit", e => {
+  e.preventDefault();
+
+  const id = editPostForm["edit-id"].value;
+  const updatedPost = {
+    title: editPostForm["edit-title"].value,
+    content: editPostForm["edit-content"].value,
+    author: editPostForm["edit-author"].value,
+    image: editPostForm["edit-image"].value
+  };
+
+  fetch(`${BASE_URL}/${id}`, {
+    method: "PATCH",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(updatedPost)
+  })
     .then(res => res.json())
     .then(() => {
-      displayPosts();
-      form.reset();
+      postList.innerHTML = "";
+      fetch(BASE_URL)
+        .then(res => res.json())
+        .then(posts => posts.forEach(renderPostTitle));
+      editPostForm.classList.add("hidden");
+      postDetail.innerHTML = "";
     });
-  });
-}
+});
 
-function addEditPostListener() {
-  const editForm = document.getElementById("edit-post-form");
-  const cancelBtn = document.getElementById("cancel-edit");
-
-  editForm.addEventListener("submit", e => {
-    e.preventDefault();
-    const updated = {
-      title: document.getElementById("edit-title").value,
-      content: document.getElementById("edit-content").value
-    };
-
-    fetch(`${BASE_URL}/${currentPostId}`, {
-      method: "PATCH",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(updated)
-    })
+// Delete Post
+function deletePost(id) {
+  fetch(`${BASE_URL}/${id}`, { method: "DELETE" })
     .then(() => {
-      displayPosts();
-      handlePostClick({ id: currentPostId, ...updated });
-      editForm.classList.add("hidden");
+      postList.innerHTML = "";
+      postDetail.innerHTML = "";
+      fetch(BASE_URL)
+        .then(res => res.json())
+        .then(posts => posts.forEach(renderPostTitle));
     });
-  });
-
-  cancelBtn.addEventListener("click", () => {
-    editForm.classList.add("hidden");
-  });
 }
 
-document.addEventListener("DOMContentLoaded", main);
+// Cancel Edit
+cancelEditBtn.addEventListener("click", () => {
+  editPostForm.classList.add("hidden");
+  editPostForm.reset();
+});

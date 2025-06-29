@@ -9,33 +9,47 @@
 <body>
   <h1 id="first-head">HOTTEST SPORTS CARS 2025!</h1>    
   <h3 id="second-head">Innovation meets efficiency</h3>
-<div class="body-container">
-  <div class="left-container">
-   <h3 id="third-head">BLOG POSTS</h3>
-     <div id="post-list"></div>
 
-   <form id="new-post-form">
-    <h3>Add New Post</h3>
-    <input type="text" name="title" placeholder="Post title" required /><br><br>
-    <textarea name="content" placeholder="Post content" required></textarea><br>
-    <input type="text" name="author" placeholder="Author name" required /><br>
-    <button type="submit">Add Post</button>
-   </form><br>
+  <div class="body-container">
+    <div class="left-container">
+      <h3 id="third-head">BLOG POSTS</h3>
+      <div id="post-list"></div>
 
-   <form id="edit-post-form" class="hidden">
-    <h4>Update Post Details</h4>
-    <label for="edit-title">Title:</label>
-    <input type="text" name="title" id="edit-title" /><br><br>
-    <label for="edit-content">Content:</label><br>
-    <textarea name="content" id="edit-content" rows="4"></textarea><br>
-    <button type="submit">Update Post</button><br><br>
-    <button type="button" id="cancel-edit">Cancel</button>
-   </form>
+      <!-- Add New Post -->
+      <form id="new-post-form">
+        <h3>Add New Post</h3>
+        <input type="text" name="title" placeholder="Post title" required /><br><br>
+        <textarea name="content" placeholder="Post content" required></textarea><br>
+        <input type="text" name="author" placeholder="Author name" required /><br>
+        <input type="text" name="image" placeholder="Image path (e.g. images/car.jpg)" /><br>
+        <button type="submit">Add Post</button>
+      </form><br>
 
+      <!-- Edit Post -->
+      <form id="edit-post-form" class="hidden">
+        <h4>Update Post Details</h4>
+        <input type="hidden" id="edit-id" name="id" />
+
+        <label for="edit-title">Title:</label>
+        <input type="text" id="edit-title" name="title" /><br><br>
+
+        <label for="edit-content">Content:</label><br>
+        <textarea id="edit-content" name="content" rows="4"></textarea><br>
+
+        <label for="edit-author">Author:</label><br>
+        <input type="text" id="edit-author" name="author" /><br>
+
+        <label for="edit-image">Image Path:</label><br>
+        <input type="text" id="edit-image" name="image" /><br><br>
+
+        <button type="submit">Update Post</button><br><br>
+        <button type="button" id="cancel-edit">Cancel</button>
+      </form>
+    </div>
+
+    <div id="post-detail"></div>
   </div>
- <div id="post-detail"></div>
- 
- </div>
-<script src="index.js"></script> 
+
+  <script src="index.js"></script> 
 </body>
 </html>
