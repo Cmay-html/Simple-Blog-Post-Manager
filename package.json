@@ -1,0 +1,24 @@
+{
+  "name": "car-blog-posts",
+  "version": "1.0.0",
+  "description": "A frontend blog post project for car enthusiasts using JSON Server and Live Server.",
+  "main": "src/index.js",
+  "scripts": {
+    "start:api":"json-server --watch db.json --port $PORT --host 0.0.0.0", 
+    "start:frontend": "live-server",
+    "start": "concurrently \"npm run start:api\" \"npm run start:frontend\""
+  },
+  "keywords": [
+    "json-server",
+    "blog",
+    "car",
+    "frontend"
+  ],
+  "author": "Cynthia Meikan",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "json-server": "^0.17.4",
+    "live-server": "^1.2.2"
+  }
+}
