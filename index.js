@@ -1,5 +1,5 @@
 
-const BASE_URL = "http://localhost:3000/posts";
+const BASE_URL =  "https://simple-blog-post-manager-1.onrender.com";
 let currentPostId = null;
 
 function main() {
