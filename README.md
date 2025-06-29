@@ -31,8 +31,9 @@ The Simple Blog Post Manager is a lightweight, beginner-friendly web application
 - A modern web browser  
 
 ### View Live Site  
-Visit the deployed application at:  
- https://simple-blog-post-manager-1.onrender.com
+Visit the deployed application at: 127.0.0.1:5502/index.html 
+
+
  
 The site allows you to:
  - View posts on the left, click to reveal details on the right.
@@ -63,8 +64,8 @@ Run the backend server using db.json:
 `json-server --watch db.json`
 
 # Now open your browser to:
-Frontend: http://127.0.0.1:5500/index.html
-Backend:  Local Backend: http://localhost:3000 
+Frontend: 127.0.0.1:5502/index.html
+Backend:  https://simple-blog-post-manager-1.onrender.com
 
 
 

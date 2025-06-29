@@ -1,85 +1,104 @@
+/* Global Styles */
 body {
-  background: linear-gradient(to bottom, skyblue, white);
-  color: black;
-  font-style: italic;
-  font-family: 'Helvetica Neue', sans-serif;
   margin: 0;
   padding: 0;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-style: italic;
+  background: linear-gradient(to bottom, skyblue, white);
+  color: black;
 }
 
-
+/* Header Styles */
 #first-head, #second-head {
   text-align: center;
   font-family: Times, serif;
   margin-top: 20px;
 }
 
-
+/* Main Container */
 .body-container {
-  background-color: whitesmoke;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  padding: 24px;
-  margin: 24px auto;
-  max-width: 90%;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  max-width: 95%;
+  margin: 24px auto;
+  padding: 24px;
+  border-radius: 8px;
+  background-color: whitesmoke;
   box-sizing: border-box;
 }
 
-
+/* Sidebar / Form Area */
 .left-container {
-  flex: 0 0 40%;         
-  background-color: white;
-  border: 1px solid #e0e0e0;
+  flex: 0 0 40%;
   padding: 20px;
+  background: white;
+  border: 1px solid #ddd;
   border-radius: 8px;
   box-sizing: border-box;
 }
 
+/* Post Detail View */
 #post-detail {
-  flex: 1;                
-  background-color: white;
-  border: 1px solid #e0e0e0;
+  flex: 1;
+  margin-left: 20px;
   padding: 20px;
+  background: white;
+  border: 1px solid #ddd;
   border-radius: 8px;
   box-sizing: border-box;
 }
 
+/* Post List Items */
+.post-title {
+  display: block;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
 
+.post-title:hover {
+  background-color: #e6f7ff;
+}
+
+/* Detail Image */
+.post-image {
+  width: 100%;
+  max-width: 700px; /* increase this to desired limit */
+  height: auto;
+  margin: 20px 0;
+  border-radius: 6px;
+  display: block;
+}
+
+
+/* Buttons */
 button {
-  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
-  background: #007bff;
+  background-color: #007bff;
   color: white;
   border: none;
-  padding: 8px 16px;
+  padding: 10px 14px;
   border-radius: 4px;
-  font-style: normal;
   font-family: inherit;
+  transition: all 0.3s ease;
 }
 
 button:hover {
-  background-color: #add8e6;
-  color: #004080; 
+  background-color: #3399ff;
   transform: scale(1.05);
   cursor: pointer;
   box-shadow: 0 4px 8px rgba(0, 64, 128, 0.3);
 }
 
-
-.badge {
-  display: inline-block;
-  padding: 5px 10px;
-  background: lightblue;
-  color: white;
-  border-radius: 4px;
-}
-
-
-input[type="text"], textarea {
+/* Form Fields */
+input[type="text"],
+textarea {
   width: 100%;
-  padding: 8px;
-  margin: 6px 0 12px 0;
+  padding: 10px;
+  margin: 8px 0 16px;
   box-sizing: border-box;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -87,41 +106,28 @@ input[type="text"], textarea {
   font-size: 1em;
 }
 
+/* Hidden Utility Class */
+.hidden {
+  display: none;
+}
 
+/* Mobile Responsive */
 @media (max-width: 768px) {
-  .body-container, .left-container, #post-detail, .post-item {
-    max-width: 100%;
-    width: 100%;
-    margin: 0 0 16px 0;
-    padding: 10px;
+  .body-container {
+    flex-direction: column;
   }
+
+  .left-container,
+  #post-detail {
+    width: 100%;
+    margin: 10px 0;
+  }
+
   #first-head, #second-head {
     font-size: 1.2em;
-    margin-top: 10px;
   }
+
   body {
     font-size: 1em;
   }
-}
-.post-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  cursor: pointer;
-  margin-bottom: 10px;
-  transition: background-color 0.3s;
-}
-
-.post-item:hover {
-  background-color: #e6f7ff;
-}
-
-.post-thumb {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 4px;
 }
