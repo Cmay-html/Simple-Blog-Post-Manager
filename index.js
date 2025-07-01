@@ -1,4 +1,4 @@
-const BASE_URL = "https://simple-blog-post-manager-1.onrender.com/posts";
+const BASE_URL = "https://simple-blog-post-manager-2.onrender.com/posts";
 
 // DOM Elements
 const postList = document.getElementById("post-list");
